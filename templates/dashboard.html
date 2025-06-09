@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Dashboard</h1>
+
+    <div class="dashboard-summary">
+      <p><strong>Total Students:</strong> {{ total_students }}</p>
+      <p><strong>Average Predicted Score:</strong> {{ avg_pred }}</p>
+
+      <h3>Students per Course:</h3>
+      <ul>
+        {% for course, count in course_counts.items() %}
+          <li>{{ course }}: {{ count }}</li>
+        {% else %}
+          <li>No courses available</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <a href="/" class="link-button">Add New Student</a>
+    <a href="/students" class="link-button">View Student List</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Add Student Performance</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Add Student Performance</h1>
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST" class="form">
+      <label for="name">Student Name:</label>
+      <input type="text" id="name" name="name" required placeholder="e.g. John Doe" />
+
+      <label for="course">Course Name:</label>
+      <input type="text" id="course" name="course" required placeholder="e.g. Mathematics" />
+
+      <label for="scores">Scores (comma-separated):</label>
+      <input
+        type="text"
+        id="scores"
+        name="scores"
+        required
+        placeholder="e.g. 65, 70, 80"
+      />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <a href="/students" class="link-button">View All Students</a>
+    <a href="/dashboard" class="link-button">Go to Dashboard</a>
+    <a href="/graph" class="link-button">View Student Graphs</a>
+
+  </div>
+</body>
+</html>
